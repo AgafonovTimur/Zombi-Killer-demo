@@ -10,7 +10,8 @@ public class Bullet : MonoBehaviour
     float speed = 1.0f;
     [SerializeField]
     float bulletLifeTime = 5.0f;
-    ParticleSystem bulletPS;
+    [SerializeField]
+    GameObject bulletBlood;
     
     // git test push
     private void Start()
@@ -30,9 +31,11 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             print("bullet destroyed on enemy");
-            bulletPS.GetComponent<ParticleSystem>().Emit(1);
-
+            //  bulletPS.GetComponent<ParticleSystem>().Emit(1);
+            Instantiate(bulletBlood,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
     }
+
+
 }

@@ -5,6 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - bullet: {fileID: 1355838778970538, guid: 2d640caa278a7a349b6860c49e9aeee2, type: 2}
+  - bulletPS: {fileID: 198027393439552072, guid: 2d640caa278a7a349b6860c49e9aeee2,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
