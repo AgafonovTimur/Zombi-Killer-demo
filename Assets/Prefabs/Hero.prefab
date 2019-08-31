@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 20297799740330418}
   - component: {fileID: 81956055198688834}
   - component: {fileID: 124540266939645192}
+  - component: {fileID: 114243097294320856}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -196,7 +197,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1656549566258960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.013643704, y: 0.98601365, z: -0.10363421, w: -0.12981118}
   m_LocalPosition: {x: 0.0001, y: 0.134, z: 0.8242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -459,6 +460,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114243097294320856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429287257034432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d191fb9f55702640a67c3154595bbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimForBullet: {x: 0, y: 0, z: 0}
+  FX: {fileID: 1964214408931872}
+  spark: {fileID: 1842917467255702}
+  bulletPrefab: {fileID: 1355838778970538, guid: 2d640caa278a7a349b6860c49e9aeee2,
+    type: 2}
+  bulletEmitter: {fileID: 1656549566258960}
 --- !u!114 &114723411777965320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,7 +611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8863ce5a8350abc4d882db6743813881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spark: {fileID: 1842917467255702}
 --- !u!124 &124540266939645192
 Behaviour:
   m_ObjectHideFlags: 1

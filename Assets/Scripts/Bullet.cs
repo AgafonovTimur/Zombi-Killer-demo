@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Crosshair))]
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
@@ -12,26 +14,37 @@ public class Bullet : MonoBehaviour
     float bulletLifeTime = 5.0f;
     [SerializeField]
     GameObject bulletBlood;
+    [SerializeField]
+    GameObject character;
+    Vector3 aimPoint;
     
-    // git test push
+    
     private void Start()
     {
+        
         Destroy(gameObject, bulletLifeTime);
         Debug.Log("bullet destroyed");
     }
 
+    
     void Update()
     {
-        transform.Translate (Vector3.forward * speed * Time.deltaTime);
+        //aimPoint = new Vector3(PlayerPrefs.GetFloat("aim1"), PlayerPrefs.GetFloat("aim2"), PlayerPrefs.GetFloat("aim3"));
+        //transform.Translate (aimPoint * speed * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, aimPoint, speed * Time.deltaTime);
         
+        aimPoint = new Vector3(PlayerPrefs.GetFloat("aim1"), PlayerPrefs.GetFloat("aim2"), PlayerPrefs.GetFloat("aim3"));
+        transform.Translate( aimPoint * speed * Time.deltaTime);
+        Debug.Log("my res " + aimPoint);
     }
-   
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             print("bullet destroyed on enemy");
-            //  bulletPS.GetComponent<ParticleSystem>().Emit(1);
+            
             Instantiate(bulletBlood,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }

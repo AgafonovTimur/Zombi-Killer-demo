@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 114612341437790530}
   - component: {fileID: 65340418618387788}
   - component: {fileID: 54591119308319232}
+  - component: {fileID: 114698052235055186}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -1246,8 +1247,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38, y: 1.72, z: 0.31}
-  m_Center: {x: 0, y: 0.82, z: 0}
+  m_Size: {x: 0.56, y: 1.72, z: 0.51}
+  m_Center: {x: 0, y: 0.82, z: 0.12}
 --- !u!95 &95053064929079256
 Animator:
   serializedVersion: 3
@@ -1277,6 +1278,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b659e8bcff5c054ab57946e01ec0740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114698052235055186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300611964618398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b47aa8a9855a73459bfc99758e6e804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMoveSpeed: 1
+  hero: {fileID: 4027899091045890, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
 --- !u!137 &137039581699937316
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
