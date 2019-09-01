@@ -235,6 +235,7 @@
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\GunFire.cs" />
     <Compile Include="Assets\Scripts\HeroStats.cs" />
+    <Compile Include="Assets\Scripts\HotKeys.cs" />
     <Compile Include="Assets\Scripts\LevelLoading.cs" />
     <Compile Include="Assets\Scripts\OLD\Crosshair.cs" />
     <Compile Include="Assets\Scripts\OLD\WeaponFire.cs" />
