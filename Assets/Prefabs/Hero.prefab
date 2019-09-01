@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 81956055198688834}
   - component: {fileID: 124540266939645192}
   - component: {fileID: 114243097294320856}
+  - component: {fileID: 114882783538427046}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -157,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210958768727374}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1, y: 1.275, z: -2.35}
+  m_LocalPosition: {x: -1.379, y: 0.955, z: -1.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4050565489789746}
@@ -197,7 +198,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1656549566258960}
-  m_LocalRotation: {x: -0.013643704, y: 0.98601365, z: -0.10363421, w: -0.12981118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0001, y: 0.134, z: 0.8242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -371,7 +372,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210958768727374}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -384,7 +385,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.88099134
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -466,7 +467,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429287257034432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d191fb9f55702640a67c3154595bbec, type: 3}
   m_Name: 
@@ -477,6 +478,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1355838778970538, guid: 2d640caa278a7a349b6860c49e9aeee2,
     type: 2}
   bulletEmitter: {fileID: 1656549566258960}
+  speed: 1
 --- !u!114 &114723411777965320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -611,6 +613,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8863ce5a8350abc4d882db6743813881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114882783538427046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429287257034432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1511dad0ff66fb4ca5bdf017f713d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  FPSCamera: {fileID: 20297799740330418}
+  gunPSFX: {fileID: 198754123810388140}
+  gunPSSparks: {fileID: 198399456783984304}
+  bloodAfterHitEffect: {fileID: 1407034027640366, guid: ce4de9c4e586a0f49824e0f15036f63f,
+    type: 2}
+  fireRate: 15
+  bulletPrefab: {fileID: 1355838778970538, guid: 2d640caa278a7a349b6860c49e9aeee2,
+    type: 2}
+  bulletEmitter: {fileID: 4210157545407102}
 --- !u!124 &124540266939645192
 Behaviour:
   m_ObjectHideFlags: 1
@@ -629,7 +653,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.8
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08

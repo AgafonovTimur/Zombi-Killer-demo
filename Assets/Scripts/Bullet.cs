@@ -3,52 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Crosshair))]
+
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    GameObject bullet;
-    [SerializeField]
-    float speed = 1.0f;
-    [SerializeField]
-    float bulletLifeTime = 5.0f;
-    [SerializeField]
-    GameObject bulletBlood;
-    [SerializeField]
-    GameObject character;
-    Vector3 aimPoint;
-    
-    
+    float bulletLifeTime;
+    public float bulletSpeed = 20f;
+    public Rigidbody rb;
+    public Vector3 bulletTarget ;
+
     private void Start()
     {
-        
-        Destroy(gameObject, bulletLifeTime);
-        Debug.Log("bullet destroyed");
-    }
 
-    
+        //rb.velocity = transform.forward * bulletSpeed;
+        //rb.velocity = transform.forward * bulletSpeed * Time.deltaTime;
+        ////rb.velocity = GunFire.* speed * Time.deltaTime;
+        Destroy(gameObject, bulletLifeTime);
+        //Debug.Log("bullet destroyed");
+    }
     void Update()
     {
-        //aimPoint = new Vector3(PlayerPrefs.GetFloat("aim1"), PlayerPrefs.GetFloat("aim2"), PlayerPrefs.GetFloat("aim3"));
-        //transform.Translate (aimPoint * speed * Time.deltaTime);
-        //transform.position = Vector3.Lerp(transform.position, aimPoint, speed * Time.deltaTime);
-        
-        aimPoint = new Vector3(PlayerPrefs.GetFloat("aim1"), PlayerPrefs.GetFloat("aim2"), PlayerPrefs.GetFloat("aim3"));
-        transform.Translate( aimPoint * speed * Time.deltaTime);
-        Debug.Log("my res " + aimPoint);
-    }
+        // transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
+        float step = bulletSpeed * Time.deltaTime;
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
+        if (bulletTarget != null)
         {
-            print("bullet destroyed on enemy");
-            
-            Instantiate(bulletBlood,transform.position,Quaternion.identity);
-            Destroy(gameObject);
+
+            transform.position = Vector3.MoveTowards(transform.position, bulletTarget, step);
         }
     }
-
+    public void bulletPos(Vector3 target)
+        {
+            bulletTarget = target;
+        }
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 
 }

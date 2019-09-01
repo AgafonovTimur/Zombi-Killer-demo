@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 65340418618387788}
   - component: {fileID: 54591119308319232}
   - component: {fileID: 114698052235055186}
+  - component: {fileID: 114461764374171856}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -1267,6 +1268,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114461764374171856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300611964618398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0590dff5b5a16849b44beb8eabd7c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!114 &114612341437790530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1284,11 +1297,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300611964618398}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b47aa8a9855a73459bfc99758e6e804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDistance: 1.5
   enemyMoveSpeed: 1
   hero: {fileID: 4027899091045890, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
 --- !u!137 &137039581699937316
