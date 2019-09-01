@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class HotKeys : MonoBehaviour {
@@ -16,6 +16,8 @@ public class HotKeys : MonoBehaviour {
         {
             Application.Quit();
         }
+        if (Input.GetKeyDown(KeyCode.I))
+            SceneManager.LoadScene(1);
         //if (Input.GetKeyDown(KeyCode.P) && Time.timeScale != 0)
         //{
         //    Time.timeScale = 0;

@@ -341,6 +341,7 @@ d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 98d69a140ec0084cde3b6a5e09aea295 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 dfd33ff9ae3ce8d7ca1f22b475ec2387 UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.HotKeys
 fea0e2150c42d546595f917ecd84d127 Assembly-CSharp.dll:.UIButtonRotation
 12ff6e48e330d3e3d42f8a987384ef57 Assembly-CSharp.dll:.NGUIFont
 f2143d8859d27c6fb35088337df79fd9 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Aeroplane.AeroplaneControlSurfaceAnimator
@@ -407,4 +408,3 @@ a6377118ce98e8a229e9bc48efd753e2 Assembly-CSharp.dll:.EquipRandomItem
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RealTime
 695c9335429d4798b6f74ca73c042ff4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
 2c7a7e88a0b82bebcf236ac19fbe25f8 Assembly-CSharp.dll:.TargetHit
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.HotKeys
