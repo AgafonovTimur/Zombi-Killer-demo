@@ -32,19 +32,19 @@ public class GunFire : MonoBehaviour {
 
     public void ShootABullet()
     {
-        //Instantiate(bulletPrefab, bulletEmitter.position, bulletEmitter.rotation);
+        
         gunPSFX.Emit(1);
         gunPSSparks.Emit(1);
         RaycastHit rHit;
         if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out rHit, range))
         {
-            Debug.Log(rHit.transform.name);
+        //    Debug.Log(rHit.transform.name);
             TargetHit target = rHit.transform.GetComponent<TargetHit>();
             
             GameObject bInst = Instantiate(bulletPrefab, bulletEmitter.position, bulletEmitter.rotation) as GameObject;
             bInst.GetComponent<Bullet>().bulletPos(rHit.point);
-            Debug.Log("rayhit "+ rHit.transform.position);
-           // bInst.transform.Translate(rHit.point);
+         //   Debug.Log("rayhit "+ rHit.transform.position);
+           
             
             Debug.DrawRay(FPSCamera.transform.position, FPSCamera.transform.forward, Color.green);
 

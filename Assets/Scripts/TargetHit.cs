@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// when zombi recieve damage
 public class TargetHit : MonoBehaviour {
 
     [SerializeField]
@@ -11,11 +12,14 @@ public class TargetHit : MonoBehaviour {
     {
         health -= ammount;
         if (health <= 0f)
-            KillEnemy();
+            gameObject.GetComponent<EnemyMeleeHit>().enemyDeathAnim();
+            
+            StartCoroutine(KillEnemy());
     }
 
-    void KillEnemy()
+    IEnumerator KillEnemy ()
     {
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }

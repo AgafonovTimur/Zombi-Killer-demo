@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 20297799740330418}
   - component: {fileID: 81956055198688834}
   - component: {fileID: 124540266939645192}
-  - component: {fileID: 114243097294320856}
   - component: {fileID: 114882783538427046}
   m_Layer: 0
   m_Name: FirstPersonCharacter
@@ -461,24 +460,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114243097294320856
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1429287257034432}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d191fb9f55702640a67c3154595bbec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimForBullet: {x: 0, y: 0, z: 0}
-  FX: {fileID: 1964214408931872}
-  spark: {fileID: 1842917467255702}
-  bulletPrefab: {fileID: 1355838778970538, guid: 2d640caa278a7a349b6860c49e9aeee2,
-    type: 2}
-  bulletEmitter: {fileID: 1656549566258960}
-  speed: 1
 --- !u!114 &114723411777965320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -624,14 +605,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1511dad0ff66fb4ca5bdf017f713d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 7
   range: 100
   FPSCamera: {fileID: 20297799740330418}
   gunPSFX: {fileID: 198754123810388140}
   gunPSSparks: {fileID: 198399456783984304}
   bloodAfterHitEffect: {fileID: 1407034027640366, guid: ce4de9c4e586a0f49824e0f15036f63f,
     type: 2}
-  fireRate: 15
+  fireRate: 10
   bulletPrefab: {fileID: 1355838778970538, guid: 2d640caa278a7a349b6860c49e9aeee2,
     type: 2}
   bulletEmitter: {fileID: 4210157545407102}

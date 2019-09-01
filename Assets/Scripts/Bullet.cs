@@ -14,16 +14,11 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-
-        //rb.velocity = transform.forward * bulletSpeed;
-        //rb.velocity = transform.forward * bulletSpeed * Time.deltaTime;
-        ////rb.velocity = GunFire.* speed * Time.deltaTime;
         Destroy(gameObject, bulletLifeTime);
-        //Debug.Log("bullet destroyed");
+        
     }
     void Update()
     {
-        // transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
         float step = bulletSpeed * Time.deltaTime;
 
         if (bulletTarget != null)
