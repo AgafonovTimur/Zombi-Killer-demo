@@ -6,33 +6,68 @@ public class GunFire : MonoBehaviour {
 
     public float damage = 10f;
     public float range = 100f;
+    public float fireRate = 15f;
+    [SerializeField]
+    int bullets = 30;
+    int oneBullet = 1;
     public Camera FPSCamera;
     public ParticleSystem gunPSFX;
     public ParticleSystem gunPSSparks;
     public GameObject bloodAfterHitEffect;
-    public float fireRate = 15f;
     public GameObject bulletPrefab;
     public Transform bulletEmitter;
+    bool coroutineIsRunnig = false;
     
     
-
-
     private float nextTimeToFire = 0f;    
     
 
-	void Update ()
+	void FixedUpdate ()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (bullets > 0)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-           // Debug.Log(nextTimeToFire + " " + fireRate);
-            ShootABullet();
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                bullets = bullets - 1;
+                // Debug.Log(nextTimeToFire + " " + fireRate);
+                Debug.Log("now "+bullets);
+                gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets);// shooting
+                ShootABullet();
+            }
         }
+        else if (bullets <= 0)
+        {
+            if (!coroutineIsRunnig)
+            {
+                StartCoroutine("ReloadWeapon");
+            }
+            Debug.Log("reload");
+        }
+    }
+   
+    // add clips counter and out of ammo Label
+    public IEnumerator ReloadWeapon( )
+    {
+        coroutineIsRunnig = true;
+        // gameObject.transform.GetChild(0).GetComponent<Animation>().Play("WeaponReload");
+        yield return new WaitForSeconds(2.5f); // reload time
+        Debug.Log("reload coroutine started ");
+        coroutineIsRunnig = false;
+        stopReload();
+    }
+
+    public void stopReload()
+    {
+        Debug.Log("reload coroutine stopped");
+     //   gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
+        bullets = 30;
+        gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets);
+        Debug.Log("reload stopped, bullets " + bullets);
     }
 
     public void ShootABullet()
     {
-        
         gunPSFX.Emit(1);
         gunPSSparks.Emit(1);
         RaycastHit rHit;
@@ -51,6 +86,7 @@ public class GunFire : MonoBehaviour {
             if (target != null && target.tag == "Enemy" )
             {
                 target.TakeDamage(damage);
+                
                 Instantiate(bloodAfterHitEffect, rHit.point, Quaternion.LookRotation(rHit.normal));
             }
             

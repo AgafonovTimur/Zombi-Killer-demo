@@ -6,15 +6,16 @@ using UnityEngine;
 public class TargetHit : MonoBehaviour {
 
     [SerializeField]
-    public float health = 50;
+    public float health = 100;
     
     public void TakeDamage(float ammount)
     {
         health -= ammount;
         if (health <= 0f)
+        {
             gameObject.GetComponent<EnemyMeleeHit>().enemyDeathAnim();
-            
             StartCoroutine(KillEnemy());
+        }
     }
 
     IEnumerator KillEnemy ()
