@@ -9,6 +9,8 @@ public class GunFire : MonoBehaviour {
     public float fireRate = 15f;
     [SerializeField]
     int bullets = 30;
+    [SerializeField]
+    int clips = 10;
     int oneBullet = 1;
     public Camera FPSCamera;
     public ParticleSystem gunPSFX;
@@ -24,25 +26,35 @@ public class GunFire : MonoBehaviour {
 
 	void FixedUpdate ()
     {
-        if (bullets > 0)
+        if (clips >= 0)
         {
-            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+           // gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(clips);
+
+            if (bullets > 0)
             {
-                nextTimeToFire = Time.time + 1f / fireRate;
-                bullets = bullets - 1;
-                // Debug.Log(nextTimeToFire + " " + fireRate);
-                Debug.Log("now "+bullets);
-                gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets);// shooting
-                ShootABullet();
+                if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+                {
+                    nextTimeToFire = Time.time + 1f / fireRate;
+                    bullets = bullets - 1;
+                    // Debug.Log(nextTimeToFire + " " + fireRate);
+                    Debug.Log("now "+bullets);
+                    gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets,clips);// shooting
+                    ShootABullet();
+                }
+            }
+            else if (bullets <= 0 && clips > 0 )
+            {
+                if (!coroutineIsRunnig)
+                {
+                    StartCoroutine("ReloadWeapon");
+                }
+                Debug.Log("reload++");
             }
         }
-        else if (bullets <= 0)
+        if (clips <= 0 && bullets <= 0)
         {
-            if (!coroutineIsRunnig)
-            {
-                StartCoroutine("ReloadWeapon");
-            }
-            Debug.Log("reload");
+            gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets, clips);// out of ammo
+            Debug.Log("out of ammo");
         }
     }
    
@@ -59,12 +71,21 @@ public class GunFire : MonoBehaviour {
 
     public void stopReload()
     {
-        Debug.Log("reload coroutine stopped");
-     //   gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
-        bullets = 30;
-        gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets);
-        Debug.Log("reload stopped, bullets " + bullets);
+        if (clips > 0 || bullets > 0)
+        {
+            Debug.Log("reload coroutine stopped");
+            //   gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
+            bullets = 30;
+            clips = clips - 1;
+            gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets, clips);
+            Debug.Log("reload stopped, bullets " + bullets + " clips " + clips);
+        }
+        if (clips < 0 && bullets < 0)
+        {
+            Debug.Log("out of ammo (reload func)");
+        }
     }
+
 
     public void ShootABullet()
     {

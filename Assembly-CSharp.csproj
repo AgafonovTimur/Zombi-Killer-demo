@@ -240,6 +240,8 @@
     <Compile Include="Assets\Scripts\OLD\Crosshair.cs" />
     <Compile Include="Assets\Scripts\OLD\WeaponFire.cs" />
     <Compile Include="Assets\Scripts\OLD\ZombiAnimations.cs" />
+    <Compile Include="Assets\Scripts\PickUps.cs" />
+    <Compile Include="Assets\Scripts\PickUpsSpawn.cs" />
     <Compile Include="Assets\Scripts\TargetHit.cs" />
     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\NGUI\ReadMe - 2018.3.0.txt" />
