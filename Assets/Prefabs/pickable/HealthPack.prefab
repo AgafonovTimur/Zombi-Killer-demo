@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23722056062753530}
   - component: {fileID: 65144348994680754}
   - component: {fileID: 114884023286923178}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HealthPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1228538640052022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.563, y: 1.818, z: -0.488}
+  m_LocalPosition: {x: 1.971, y: 1, z: 2.66}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}

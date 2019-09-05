@@ -12,13 +12,13 @@ public class HeroStats : MonoBehaviour{
 //    string heroHealthS;
     public int heroArmorF = 25;
  //   string heroArmorS;
-    int bulletAmmount = 30;
+    public int bulletAmmount = 30;
   //  string bulletAmmountS;
-    int clipsAmmount = 2;
+    public int clipsAmmount = 10;
   //  string clipsAmmountS;
-    int healthPack = 2;
+    public int healthPack = 2;
   //  string healthPackS;
-    int grenades = 5;
+    public int grenades = 5;
    // string grenadesS;
 
 
@@ -37,44 +37,66 @@ public class HeroStats : MonoBehaviour{
 
     }
 
-    public int HeroHitted(int x, int y)
+    public int HeroHealed(int x, int y) // healed by pick ups
     {
         Debug.Log("x = " + x);
         if (x > 0)
         {
             heroHealthF = x;
-            Debug.Log("&" +heroHealthF);
+     //       Debug.Log("?" + heroHealthF);
             heroHealthF.ToString(); //hp
             heroHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = heroHealthF.ToString();
             //heroArmorF = heroArmorF - y;
             //heroHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = heroArmorF.ToString(); //armor
-            Debug.Log("heroDamageTaken " + heroHealthF + " armor " + heroArmorF);
+   //         Debug.Log("heroDamageTaken " + heroHealthF + " armor " + heroArmorF);
         }
         if (x <= 0)
             HeroDeath();
         return x;
     }
-    public void AmmoConsuption(int x, int y) // send bullets ammount
+    public int HeroHitted(int x, int y) // hitted by enemy
     {
-        if (x >= 0)
+        Debug.Log("x = " + x);
+        if (x > 0)
         {
-            ammoGO.transform.GetChild(6).gameObject.SetActive(false);
+            heroHealthF = heroHealthF - x;
+       //     Debug.Log("&" + heroHealthF);
+            heroHealthF.ToString(); //hp
+            heroHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = heroHealthF.ToString();
+            //heroArmorF = heroArmorF - y;
+            //heroHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = heroArmorF.ToString(); //armor
+     //       Debug.Log("heroDamageTaken " + x + " armor " + heroArmorF);
+        }
+        if (x <= 0)
+            HeroDeath();
+        return x;
+    }
+    public void AmmoConsuption(int x, int y) // send bullets , clips
+    {
+        Debug.Log("y " + y);
+        if (x >= 0) // bullets
+        {
+            ammoGO.transform.GetChild(6).gameObject.SetActive(false); //out of ammo
             ammoGO.transform.GetChild(2).GetComponent<UILabel>().text = y.ToString();
             ammoGO.transform.GetChild(1).GetComponent<UILabel>().text = x.ToString();
-            Debug.Log("bullets " + x);
+            clipsAmmount = y;
+            Debug.Log("ammo consumption " + x + " " + y +" "+ clipsAmmount);
         }
-        if (x <= 0 && y <= 0)
+        if (x <= 0 && y <= 0) //ammo, bullets
         {
             ammoGO.transform.GetChild(6).gameObject.SetActive(true);
             ammoGO.transform.GetChild(6).GetComponent<UILabel>().text = "Out Of Ammo";
         }
-
-
     }
+    //public void clipsAmmountTotal(int x)
+    //{
+
+    //    Debug.Log("clips ammount total " + x);
+    //}
 
     private void HeroDeath()
     {
-        Debug.Log("death");
+      //  Debug.Log("death");
         Transform t = gameObject.GetComponent<Transform>();
   //      t.gameObject.SetActive(false);
     }

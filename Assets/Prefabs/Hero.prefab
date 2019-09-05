@@ -495,6 +495,10 @@ MonoBehaviour:
   ammoGO: {fileID: 0}
   heroHealthF: 100
   heroArmorF: 25
+  bulletAmmount: 30
+  clipsAmmount: 10
+  healthPack: 2
+  grenades: 5
 --- !u!114 &114510964069650276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,7 +513,8 @@ MonoBehaviour:
   damage: 7
   range: 100
   fireRate: 10
-  bullets: 2
+  bullets: 30
+  clips: 10
   FPSCamera: {fileID: 20760320873301836}
   gunPSFX: {fileID: 198947926933145132}
   gunPSSparks: {fileID: 198032970189273760}
