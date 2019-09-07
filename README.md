@@ -12,5 +12,5 @@ Demo level
 
 
 
-I - restart
-O - exit
+- I - restart
+- O - exit
