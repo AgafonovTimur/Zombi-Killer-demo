@@ -1,4 +1,4 @@
-# Zombi-Killer-demo
+# 3D shooter Zombi-Killer-demo
 Demo level
 
 
