@@ -14,7 +14,7 @@ public class PickUpAmmo : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hero")
+        if (other.gameObject.tag == "Player")
         {
             int x = other.GetComponentInChildren<GunFire>().bullets;
             int y = other.GetComponent<HeroStats>().clipsAmmount;

@@ -113,7 +113,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: ea8438239cfd2804da6d3943fa78753b, type: 2}
 --- !u!1001 &6648772
 Prefab:
   m_ObjectHideFlags: 0
@@ -1360,6 +1360,10 @@ Prefab:
     - target: {fileID: 4885485653155956, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504667541005398, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
@@ -3345,6 +3349,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1188310915591748, guid: 9e18795feda261b44b01266c1e785076, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e18795feda261b44b01266c1e785076, type: 2}
   m_IsPrefabAsset: 0
@@ -4028,6 +4036,10 @@ Prefab:
         type: 2}
       propertyPath: RotationSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188310915591748, guid: 9e18795feda261b44b01266c1e785076, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e18795feda261b44b01266c1e785076, type: 2}
@@ -5445,6 +5457,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1228538640052022, guid: 1322bf45ecd593a49aa672ae93b2ca93, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1322bf45ecd593a49aa672ae93b2ca93, type: 2}
   m_IsPrefabAsset: 0
@@ -6441,6 +6457,32 @@ MonoBehaviour:
   mSpriteName: CrossFire
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!1 &1222163411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300611964618398, guid: 35e11e42dae27b9428e1ba5af3b932d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1309176816}
+--- !u!195 &1222163419
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1222163411}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1226809046
 Prefab:
   m_ObjectHideFlags: 0
@@ -6919,6 +6961,31 @@ Prefab:
     - target: {fileID: 4846736819855508, guid: 35e11e42dae27b9428e1ba5af3b932d4, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698052235055186, guid: 35e11e42dae27b9428e1ba5af3b932d4,
+        type: 2}
+      propertyPath: hero
+      value: 
+      objectReference: {fileID: 2145181973}
+    - target: {fileID: 114119723788113428, guid: 35e11e42dae27b9428e1ba5af3b932d4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698052235055186, guid: 35e11e42dae27b9428e1ba5af3b932d4,
+        type: 2}
+      propertyPath: zombiMoveSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698052235055186, guid: 35e11e42dae27b9428e1ba5af3b932d4,
+        type: 2}
+      propertyPath: minDistance
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 95053064929079256, guid: 35e11e42dae27b9428e1ba5af3b932d4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e11e42dae27b9428e1ba5af3b932d4, type: 2}
@@ -7723,6 +7790,10 @@ Prefab:
         type: 2}
       propertyPath: RotationSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228538640052022, guid: 1322bf45ecd593a49aa672ae93b2ca93, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1322bf45ecd593a49aa672ae93b2ca93, type: 2}
@@ -8718,6 +8789,10 @@ Prefab:
         type: 2}
       propertyPath: RotationSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188310915591748, guid: 9e18795feda261b44b01266c1e785076, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e18795feda261b44b01266c1e785076, type: 2}
@@ -11018,3 +11093,8 @@ MonoBehaviour:
   mSpriteName: CrossFire
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!4 &2145181973 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4885485653155956, guid: f3513c0985a9fc740a37ba9034177e47,
+    type: 2}
+  m_PrefabInternal: {fileID: 244753232}

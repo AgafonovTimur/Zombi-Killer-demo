@@ -14,7 +14,7 @@ public class PickUpHealth : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hero")
+        if (other.gameObject.tag == "Player")
         {
             int x = other.GetComponent<HeroStats>().heroHealthF;
         //    Debug.Log("hero health on pick up " + x);

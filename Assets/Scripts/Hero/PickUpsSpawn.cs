@@ -24,7 +24,7 @@ public class PickUpsSpawn : MonoBehaviour {
 
 //private void OnTriggerEnter(Collider other)
 //{
-//    if (other.gameObject.tag == "Hero")
+//    if (other.gameObject.tag == ")
 //    {
 //        //   transform.gameObject.SetActive(true);
 //        enemySpawn();

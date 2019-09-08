@@ -19,7 +19,7 @@ public class EnemyMeleeHit : MonoBehaviour {
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hero" && other.gameObject != null)
+        if (other.gameObject.tag == "Player" && other.gameObject != null)
         {
             StartCoroutine("enemyAttack");
             other.GetComponent<HeroStats>().HeroHitted(damageToHeroOnHit, 0); // add armor 
@@ -46,7 +46,7 @@ public class EnemyMeleeHit : MonoBehaviour {
     }
     //private void OnTriggerExit(Collider other)
     //{
-    //    if (other.gameObject.tag == "Hero")
+    //    if (other.gameObject.tag == Hero")
     //    {
     //        anim.SetTrigger("walk");
     //        StopCoroutine("enemyAttack");

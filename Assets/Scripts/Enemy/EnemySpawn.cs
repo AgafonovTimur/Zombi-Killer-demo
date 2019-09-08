@@ -10,7 +10,7 @@ public class EnemySpawn : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hero")
+        if (other.gameObject.tag == "Player")
         {
          //   transform.gameObject.SetActive(true);
             enemySpawn();

@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300611964618398}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc82967c126cebb42a9bcd24887c042b, type: 3}
   m_Name: 
@@ -1371,14 +1371,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300611964618398}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b47aa8a9855a73459bfc99758e6e804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 1.5
-  enemyMoveSpeed: 1
-  hero: {fileID: 4027899091045890, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
+  zombiMoveSpeed: 1
+  hero: {fileID: 0}
 --- !u!135 &135207822996407432
 SphereCollider:
   m_ObjectHideFlags: 1
