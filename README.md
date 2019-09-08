@@ -1,5 +1,5 @@
-# Zombi-Killer-demo
-Demo level
+# Zombi Killer
+3D shooter Demo level
 
 
 5 09 2019
