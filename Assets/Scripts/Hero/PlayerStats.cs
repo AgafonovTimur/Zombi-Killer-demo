@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour{
+public class PlayerStats : MonoBehaviour {
 
-    [SerializeField]
+    //[SerializeField]
     GameObject playerHealthGO;
-    [SerializeField]
+    //[SerializeField]
     GameObject ammoGO;
     public int playerHealthF = 100;
 //    string heroHealthS;
@@ -34,7 +34,7 @@ public class PlayerStats : MonoBehaviour{
         ammoGO.transform.GetChild(2).GetComponent<UILabel>().text = "10"; // clips
         ammoGO.transform.GetChild(4).GetComponent<UILabel>().text = "2"; //grenades
         ammoGO.transform.GetChild(6).gameObject.SetActive(false); // hide out of ammo
-
+        gameObject.name = "Player";
     }
 
     public int PlayerHealed(int x, int y) // healed by pick ups

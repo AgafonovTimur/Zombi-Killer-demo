@@ -17,7 +17,8 @@ public class GunFire : MonoBehaviour {
     public GameObject bloodAfterHitEffect;
     public GameObject bulletPrefab;
     public Transform bulletEmitter;
-    bool coroutineIsRunnig = false;
+    public GameObject reloadGO;
+    bool isReloading = false;
     
     
     private float nextTimeToFire = 0f;    
@@ -25,11 +26,18 @@ public class GunFire : MonoBehaviour {
 
 	void FixedUpdate ()
     {
+        if (Input.GetKeyDown(KeyCode.R) && bullets < 30)
+        {
+            if (!isReloading)
+            {
+                StartCoroutine("ReloadWeapon");
+            }
+        }
         if (clips >= 0)
         {
             // gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(clips);
 
-            if (bullets > 0)
+            if (bullets > 0 && !isReloading) 
             {
                 if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
                 {
@@ -51,7 +59,7 @@ public class GunFire : MonoBehaviour {
             }
             else if (bullets <= 0 && clips > 0 )
             {
-                if (!coroutineIsRunnig)
+                if (!isReloading)
                 {
                     StartCoroutine("ReloadWeapon");
                 }
@@ -66,27 +74,30 @@ public class GunFire : MonoBehaviour {
     }
    
     // add clips counter and out of ammo Label
-    public IEnumerator ReloadWeapon( )
+    public IEnumerator ReloadWeapon()
     {
-        coroutineIsRunnig = true;
-        // gameObject.transform.GetChild(0).GetComponent<Animation>().Play("WeaponReload");
-        yield return new WaitForSeconds(2.5f); // reload time
-        Debug.Log("reload coroutine started ");
-        coroutineIsRunnig = false;
+        isReloading = true;
+        reloadGO.GetComponent<Animator>().SetBool("reload", true);
+ //       Debug.Log("reload coroutine started ");
+        //       gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("WeaponReload");
+        yield return new WaitForSeconds(2f); // reload time
+        reloadGO.GetComponent<Animator>().SetBool("reload", false);
+        isReloading = false;
         stopReload();
+        yield break;
     }
 
     public void stopReload()
     {
         if (clips > 0 || bullets > 0)
         {
-            Debug.Log("reload coroutine stopped");
+//            Debug.Log("reload coroutine stopped");
             //   gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
             bullets = 30;
             clips = clips - 1;
-            Debug.Log("clips - 1 = " + clips);
+            //            Debug.Log("clips - 1 = " + clips);
             gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(bullets, clips);
-            Debug.Log("reload stopped, bullets " + bullets + " clips " + clips);
+ //           Debug.Log("reload finished, bullets " + bullets + " clips " + clips);
         }
         if (clips < 0 && bullets < 0)
         {
@@ -103,7 +114,7 @@ public class GunFire : MonoBehaviour {
         if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out rHit, range))
         {
             //    Debug.Log(rHit.transform.name);
-            ZombiTakeDamage target = rHit.transform.GetComponent<ZombiTakeDamage>();
+            EnemyTakeDamage target = rHit.transform.GetComponent<EnemyTakeDamage>();
             
             GameObject bInst = Instantiate(bulletPrefab, bulletEmitter.position, bulletEmitter.rotation) as GameObject;
             bInst.GetComponent<Bullet>().bulletPos(rHit.point);

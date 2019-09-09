@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // when zombi recieve damage
-public class ZombiTakeDamage : MonoBehaviour {
+public class EnemyTakeDamage : MonoBehaviour {
 
     [SerializeField]
     public float health = 100;
@@ -15,14 +15,15 @@ public class ZombiTakeDamage : MonoBehaviour {
         {
             gameObject.GetComponent<EnemyMeleeHit>().EnemyDeathAnim();
             StartCoroutine(KillZombi());
-            Debug.Log("kill 1");
+ //           Debug.Log("zombi killed");
         }
     }
 
     IEnumerator KillZombi ()
     {
         yield return new WaitForSeconds(3);
+ //       Debug.Log("kill: wait to destroy zombi body 3 sec");
         Destroy(gameObject);
-        Debug.Log("kill 2");
+        
     }
 }
