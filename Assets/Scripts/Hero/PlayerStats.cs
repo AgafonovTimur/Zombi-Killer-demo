@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroStats : MonoBehaviour{
+public class PlayerStats : MonoBehaviour{
 
     [SerializeField]
-    GameObject heroHealthGO;
+    GameObject playerHealthGO;
     [SerializeField]
     GameObject ammoGO;
-    public int heroHealthF = 100;
+    public int playerHealthF = 100;
 //    string heroHealthS;
-    public int heroArmorF = 25;
+    public int playerArmorF = 25;
  //   string heroArmorS;
     public int bulletAmmount = 30;
   //  string bulletAmmountS;
@@ -24,12 +24,12 @@ public class HeroStats : MonoBehaviour{
 
 
     void Start () {
-        heroHealthGO = GameObject.Find("heroHealthAndArmor");
+        playerHealthGO = GameObject.Find("playerHealthAndArmor");
         ammoGO = GameObject.Find("ammunation");
-        heroHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = "100"; //hp , 125 max
-        heroHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = "25"; // armor
-        heroHealthGO.transform.GetChild(5).GetComponent<UILabel>().text = "5"; // health pack
-        heroHealthGO.transform.GetChild(7).GetComponent<UILabel>().text = "2"; // boosts
+        playerHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = "100"; //hp , 125 max
+        playerHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = "25"; // armor
+        playerHealthGO.transform.GetChild(5).GetComponent<UILabel>().text = "5"; // health pack
+        playerHealthGO.transform.GetChild(7).GetComponent<UILabel>().text = "2"; // boosts
         ammoGO.transform.GetChild(1).GetComponent<UILabel>().text = "30"; // bullets in weapon
         ammoGO.transform.GetChild(2).GetComponent<UILabel>().text = "10"; // clips
         ammoGO.transform.GetChild(4).GetComponent<UILabel>().text = "2"; //grenades
@@ -37,50 +37,50 @@ public class HeroStats : MonoBehaviour{
 
     }
 
-    public int HeroHealed(int x, int y) // healed by pick ups
+    public int PlayerHealed(int x, int y) // healed by pick ups
     {
         Debug.Log("x = " + x);
         if (x > 0)
         {
-            heroHealthF = x;
-     //       Debug.Log("?" + heroHealthF);
-            heroHealthF.ToString(); //hp
-            heroHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = heroHealthF.ToString();
+            playerHealthF = x;
+            //       Debug.Log("?" + heroHealthF);
+            playerHealthF.ToString(); //hp
+            playerHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = playerHealthF.ToString();
             //heroArmorF = heroArmorF - y;
             //heroHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = heroArmorF.ToString(); //armor
    //         Debug.Log("heroDamageTaken " + heroHealthF + " armor " + heroArmorF);
         }
         if (x <= 0)
-            HeroDeath();
+            PlayerDeath();
         return x;
     }
-    public int HeroHitted(int x, int y) // hitted by enemy
+    public int PlayerHitted(int x, int y) // hitted by enemy
     {
         Debug.Log("x = " + x);
         if (x > 0)
         {
-            heroHealthF = heroHealthF - x;
-       //     Debug.Log("&" + heroHealthF);
-            heroHealthF.ToString(); //hp
-            heroHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = heroHealthF.ToString();
+            playerHealthF = playerHealthF - x;
+            //     Debug.Log("&" + heroHealthF);
+            playerHealthF.ToString(); //hp
+            playerHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = playerHealthF.ToString();
             //heroArmorF = heroArmorF - y;
             //heroHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = heroArmorF.ToString(); //armor
      //       Debug.Log("heroDamageTaken " + x + " armor " + heroArmorF);
         }
         if (x <= 0)
-            HeroDeath();
+            PlayerDeath();
         return x;
     }
     public void AmmoConsuption(int x, int y) // send bullets , clips
     {
-        Debug.Log("y " + y);
+ //       Debug.Log("y " + y);
         if (x >= 0) // bullets
         {
             ammoGO.transform.GetChild(6).gameObject.SetActive(false); //out of ammo
             ammoGO.transform.GetChild(2).GetComponent<UILabel>().text = y.ToString();
             ammoGO.transform.GetChild(1).GetComponent<UILabel>().text = x.ToString();
             clipsAmmount = y;
-            Debug.Log("ammo consumption " + x + " " + y +" "+ clipsAmmount);
+  //          Debug.Log("ammo consumption " + x + " " + y +" "+ clipsAmmount);
         }
         if (x <= 0 && y <= 0) //ammo, bullets
         {
@@ -94,7 +94,7 @@ public class HeroStats : MonoBehaviour{
     //    Debug.Log("clips ammount total " + x);
     //}
 
-    private void HeroDeath()
+    private void PlayerDeath()
     {
       //  Debug.Log("death");
         Transform t = gameObject.GetComponent<Transform>();

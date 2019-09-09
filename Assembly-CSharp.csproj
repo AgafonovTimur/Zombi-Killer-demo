@@ -231,14 +231,14 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyMeleeHit.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMoves.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemySpawn.cs" />
-    <Compile Include="Assets\Scripts\Enemy\TargetHit.cs" />
+    <Compile Include="Assets\Scripts\Enemy\ZombiTakeDamage.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Hero\Bullet.cs" />
     <Compile Include="Assets\Scripts\Hero\GunFire.cs" />
-    <Compile Include="Assets\Scripts\Hero\HeroStats.cs" />
     <Compile Include="Assets\Scripts\Hero\PickUpAmmo.cs" />
     <Compile Include="Assets\Scripts\Hero\PickUpHealth.cs" />
     <Compile Include="Assets\Scripts\Hero\PickUpsSpawn.cs" />
+    <Compile Include="Assets\Scripts\Hero\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\HotKeys.cs" />
     <Compile Include="Assets\Scripts\LevelLoading.cs" />
     <Compile Include="Assets\Scripts\OLD\Crosshair.cs" />

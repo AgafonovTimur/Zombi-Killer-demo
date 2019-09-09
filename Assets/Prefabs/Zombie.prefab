@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 114698052235055186}
   - component: {fileID: 114461764374171856}
   - component: {fileID: 114119723788113428}
+  - component: {fileID: 195907229289052868}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -1346,13 +1347,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300611964618398}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc82967c126cebb42a9bcd24887c042b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 0}
-  damageToHeroOnHit: 40
+  player: {fileID: 1504667541005398, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
+  damageToplayerOnHit: 10
 --- !u!114 &114461764374171856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1376,9 +1377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b47aa8a9855a73459bfc99758e6e804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 1.5
-  zombiMoveSpeed: 1
-  hero: {fileID: 0}
+  minDistance: 2.5
+  zombiMoveSpeed: 0.7
 --- !u!135 &135207822996407432
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -2301,3 +2301,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.40291405, y: 0.10811783, z: 0.00000026077032}
     m_Extent: {x: 0.16522883, y: 0.13977434, z: 0.08768336}
   m_DirtyAABB: 0
+--- !u!195 &195907229289052868
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300611964618398}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

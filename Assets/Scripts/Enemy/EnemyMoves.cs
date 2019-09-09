@@ -11,7 +11,7 @@ public class EnemyMoves : MonoBehaviour {
     float minDistance = 1.5f;
     [SerializeField]
     float zombiMoveSpeed = 1.0f;
-    public Transform hero;
+ //   public Transform player;
     NavMeshAgent zombi;
 
 
@@ -24,17 +24,17 @@ public class EnemyMoves : MonoBehaviour {
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, hero.position) >= minDistance)
-        {
-            Vector3 heroPos = new Vector3 (hero.transform.position.x, hero.transform.position.y - 1f, hero.transform.position.z);
-            transform.LookAt(heroPos);
-            zombi.destination = hero.transform.position * zombiMoveSpeed;
-        }
+        //if (Vector3.Distance(transform.position, player.position) >= minDistance)
+        //{
+        //    Vector3 playerPos = new Vector3 (player.transform.position.x, player.transform.position.y - 1f, player.transform.position.z);
+        //    transform.LookAt(playerPos);
+        //    zombi.destination = player.transform.position * zombiMoveSpeed;
+        //}
 
-        if (Vector3.Distance(transform.position, hero.position) <= maxDistance)
-        {
+        //if (Vector3.Distance(transform.position, player.position) <= maxDistance)
+        //{
 
-        }
+        //}
 
         //transform.LookAt(hero.transform);
 

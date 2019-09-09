@@ -6,9 +6,9 @@ using UnityEngine;
 public class EnemyMeleeHit : MonoBehaviour {
 
     [SerializeField]
-    private  GameObject hero;
+    private  GameObject player;
     [SerializeField]
-    int damageToHeroOnHit = 10;
+    int damageToplayerOnHit = 10;
     Animator anim;
 
     private void Start()
@@ -17,46 +17,49 @@ public class EnemyMeleeHit : MonoBehaviour {
         anim.SetTrigger("idle");
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // 1 attack to player
     {
         if (other.gameObject.tag == "Player" && other.gameObject != null)
         {
-            StartCoroutine("enemyAttack");
-            other.GetComponent<HeroStats>().HeroHitted(damageToHeroOnHit, 0); // add armor 
+  //          StartCoroutine("EnemyAttack");
+            other.GetComponent<PlayerStats>().PlayerHitted(damageToplayerOnHit, 0); // add - hp 
             anim.SetTrigger("attack");
         }
     }
     
-    IEnumerator enemyAttack ()
+    IEnumerator EnemyAttack () // wait before next attack
     {
-        transform.GetChild(0).gameObject.SetActive(false);
+        //     transform.GetChild(0).gameObject.SetActive(false);
         yield return new WaitForSeconds(1);
-        transform.GetChild(0).gameObject.SetActive(true);
+        Debug.Log("enumerator 2");
+        //      transform.GetChild(0).gameObject.SetActive(true);
         //transform.GetChild(0).Translate(new Vector3(0, 0, -0.2f), Space.Self);
-        
+
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other) // damage player every x second during stay close
     {
-        if (other.gameObject == null)
+        if (other.gameObject.tag == "Player" && other.gameObject != null)
         {
             //anim.ResetTrigger("attack");
-            anim.SetTrigger("walk");
-            StopCoroutine("enemyAttack");
+ //           anim.SetTrigger("attack");
+            StartCoroutine("EnemyAttack");
+            Debug.Log("stay in zombi range");
+  //          StopCoroutine("enemyAttack");
         }
     }
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == Hero")
-    //    {
-    //        anim.SetTrigger("walk");
-    //        StopCoroutine("enemyAttack");
-    //    }
-
-    //}
-    public void enemyDeathAnim()
+    private void OnTriggerExit(Collider other)
+    {
+        anim.SetTrigger("walk");
+        //if (other.gameObject.tag == "Player" && other.gameObject != null)
+        //{
+            StopCoroutine("enemyAttack");
+            Debug.Log("enumerator stopped");
+        //}
+    }
+    public void EnemyDeathAnim()
     {
         anim.SetTrigger("fallingback");
-       // Debug.Log("fallingback anim");
+        Debug.Log("fallingback anim");
     }
 
 }

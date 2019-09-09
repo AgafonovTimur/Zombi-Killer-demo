@@ -12,13 +12,13 @@ public class EnemySpawn : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-         //   transform.gameObject.SetActive(true);
-            enemySpawn();
+            //   transform.gameObject.SetActive(true);
+            ZombiSpawn();
             Destroy(gameObject);
         }
     }
     
-    private void enemySpawn()
+    private void ZombiSpawn()
     {
         Instantiate(ZombiPrefab, transform.position, transform.rotation);
     } 

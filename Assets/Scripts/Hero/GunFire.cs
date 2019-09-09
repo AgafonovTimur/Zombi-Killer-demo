@@ -27,25 +27,25 @@ public class GunFire : MonoBehaviour {
     {
         if (clips >= 0)
         {
-           // gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(clips);
+            // gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(clips);
 
             if (bullets > 0)
             {
                 if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
                 {
-                    if (bullets != gameObject.GetComponentInParent<HeroStats>().bulletAmmount)
+                    if (bullets != gameObject.GetComponentInParent<PlayerStats>().bulletAmmount)
                     {
-                        gameObject.GetComponentInParent<HeroStats>().bulletAmmount = bullets;
+                        gameObject.GetComponentInParent<PlayerStats>().bulletAmmount = bullets;
                     }
-                    if(clips != gameObject.GetComponentInParent<HeroStats>().clipsAmmount)
+                    if(clips != gameObject.GetComponentInParent<PlayerStats>().clipsAmmount)
                     {
-                        clips = gameObject.GetComponentInParent<HeroStats>().clipsAmmount;
+                        clips = gameObject.GetComponentInParent<PlayerStats>().clipsAmmount;
                     }
                     nextTimeToFire = Time.time + 1f / fireRate;
                     bullets = bullets - 1;
                     // Debug.Log(nextTimeToFire + " " + fireRate);
-                    Debug.Log("now "+ bullets + " " +clips);
-                    gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets,clips);// shooting
+  //                  Debug.Log("now "+ bullets + " " +clips);
+                    gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(bullets,clips);// shooting
                     ShootABullet();
                 }
             }
@@ -60,7 +60,7 @@ public class GunFire : MonoBehaviour {
         }
         if (clips <= 0 && bullets <= 0)
         {
-            gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets, clips);// out of ammo
+            gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(bullets, clips);// out of ammo
             Debug.Log("out of ammo bullets " + bullets + " " + clips);
         }
     }
@@ -85,7 +85,7 @@ public class GunFire : MonoBehaviour {
             bullets = 30;
             clips = clips - 1;
             Debug.Log("clips - 1 = " + clips);
-            gameObject.GetComponentInParent<HeroStats>().AmmoConsuption(bullets, clips);
+            gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(bullets, clips);
             Debug.Log("reload stopped, bullets " + bullets + " clips " + clips);
         }
         if (clips < 0 && bullets < 0)
@@ -102,8 +102,8 @@ public class GunFire : MonoBehaviour {
         RaycastHit rHit;
         if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out rHit, range))
         {
-        //    Debug.Log(rHit.transform.name);
-            TargetHit target = rHit.transform.GetComponent<TargetHit>();
+            //    Debug.Log(rHit.transform.name);
+            ZombiTakeDamage target = rHit.transform.GetComponent<ZombiTakeDamage>();
             
             GameObject bInst = Instantiate(bulletPrefab, bulletEmitter.position, bulletEmitter.rotation) as GameObject;
             bInst.GetComponent<Bullet>().bulletPos(rHit.point);

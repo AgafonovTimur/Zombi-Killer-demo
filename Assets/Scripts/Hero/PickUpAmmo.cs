@@ -17,7 +17,7 @@ public class PickUpAmmo : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             int x = other.GetComponentInChildren<GunFire>().bullets;
-            int y = other.GetComponent<HeroStats>().clipsAmmount;
+            int y = other.GetComponent<PlayerStats>().clipsAmmount;
         //    int x = other.GetComponentInChildren<GunFire>().clips;
             Debug.Log("clips on pick up " + x + " "  + y);
             if (y >= 10) // ammo pack cant be picked
@@ -31,13 +31,13 @@ public class PickUpAmmo : MonoBehaviour {
                 if (y > 10)
                 {
                     y = 10;
-                    other.GetComponentInChildren<HeroStats>().AmmoConsuption(x, y); // ammo pack picked
+                    other.GetComponentInChildren<PlayerStats>().AmmoConsuption(x, y); // ammo pack picked
                     Debug.Log("clips to 10 " + x + " " + y);
                     Destroy(gameObject);
                 }
                 if (y <= 10)
                 {
-                    other.GetComponentInChildren<HeroStats>().AmmoConsuption(x, y); // ammo pack picked
+                    other.GetComponentInChildren<PlayerStats>().AmmoConsuption(x, y); // ammo pack picked
                     Debug.Log("clips <= 10 " + y);
                     Destroy(gameObject);
                 }

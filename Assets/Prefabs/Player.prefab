@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 82999913789225102}
   - component: {fileID: 114405681170479258}
   m_Layer: 0
-  m_Name: Hero
+  m_Name: Player
   m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,10 +491,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c074a57af064bee41aeb4d598596a101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroHealthGO: {fileID: 0}
+  playerHealthGO: {fileID: 0}
   ammoGO: {fileID: 0}
-  heroHealthF: 100
-  heroArmorF: 25
+  playerHealthF: 100
+  playerArmorF: 25
   bulletAmmount: 30
   clipsAmmount: 10
   healthPack: 2
