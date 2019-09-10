@@ -61,6 +61,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_ZombiProject\Scripts\DestroyObj.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\DoorsOpenClose.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Enemy\EnemyMeleeHit.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Enemy\EnemyMoves.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Enemy\EnemySpawn.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Enemy\EnemyTakeDamage.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\FPS.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Hero\Bullet.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Hero\GunFire.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Hero\PickUpAmmo.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Hero\PickUpHealth.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Hero\PickUpsSpawn.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Hero\PlayerStats.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\HotKeys.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\HumanoidStats.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\LevelLoading.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\LiftUpDown.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\MessageForPlayer.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
@@ -226,28 +246,10 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\Scripts\DestroyObj.cs" />
-    <Compile Include="Assets\Scripts\DontDestroyOnLoad.cs" />
-    <Compile Include="Assets\Scripts\FirstPersonController.cs" />
-    <Compile Include="Assets\Scripts\FPS.cs" />
-    <Compile Include="Assets\Scripts\Hero\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Hero\GunFire.cs" />
-    <Compile Include="Assets\Scripts\Hero\PickUpAmmo.cs" />
-    <Compile Include="Assets\Scripts\Hero\PickUpHealth.cs" />
-    <Compile Include="Assets\Scripts\Hero\PickUpsSpawn.cs" />
-    <Compile Include="Assets\Scripts\Hero\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\HotKeys.cs" />
-    <Compile Include="Assets\Scripts\HumanoidStats.cs" />
-    <Compile Include="Assets\Scripts\LevelLoading.cs" />
-    <Compile Include="Assets\Scripts\MoveDoor.cs" />
-    <Compile Include="Assets\Scripts\Zombi\EnemyMeleeHit.cs" />
-    <Compile Include="Assets\Scripts\Zombi\EnemyMoves.cs" />
-    <Compile Include="Assets\Scripts\Zombi\EnemySpawn.cs" />
-    <Compile Include="Assets\Scripts\Zombi\EnemyTakeDamage.cs" />
     <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\NGUI\ReadMe - 2018.3.0.txt" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
-    <None Include="Assets\_Barking_Dog\Readme_Please.txt" />
+    <None Include="Assets\Barking_Dog\Readme_Please.txt" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
     <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend Scroll.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
