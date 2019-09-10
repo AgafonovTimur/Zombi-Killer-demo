@@ -5,13 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/DontDestroyOnLoad.unity
+    path: Assets/_ZombiProject/Scenes/DontDestroyOnLoad.unity
     guid: b03500b4a28dafd4d8a48c7574d4da97
   - enabled: 1
-    path: Assets/Scenes/Scene1.unity
+    path: Assets/_ZombiProject/Scenes/Scene1.unity
     guid: 776545fe888751446a04e3332e1ea125
   m_configObjects: {}

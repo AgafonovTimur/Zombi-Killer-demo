@@ -79,6 +79,7 @@
     <Compile Include="Assets\_ZombiProject\Scripts\HotKeys.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\HumanoidStats.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\LevelLoading.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\LiftActivation.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\LiftUpDown.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\MessageForPlayer.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
