@@ -1,6 +1,22 @@
 # Zombi Killer
 3D shooter Demo level
 
+11 09
+- weapon upgrade
+- boss at the end
+- player death
+
+10 09
+- few UI windows
+- some improvements
+- partly bottom lvl
+- skybox added
+
+9 09 
+- zombie AI (first try)
+- zombi hit every 1 sec in melee range
+- realod weapon if bullet > 0
+- platform at the end moves up/down
 
 5 09 2019
 
@@ -12,5 +28,5 @@
 
 #
 
-- I - restart
-- O - exit
+- F5 - restart
+- escape - exit
