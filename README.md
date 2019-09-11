@@ -2,6 +2,7 @@
 3D shooter Demo level Unity version 2018.2
 
 11 09
+- cant leave room if any zombi is alive
 - weapon upgrade
 - boss at the end
 - player death
