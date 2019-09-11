@@ -106,8 +106,12 @@ public class PlayerStats : MonoBehaviour {
         //      Transform t = gameObject.GetComponent<Transform>();
         //      t.gameObject.SetActive(false);
     }
-    public void MessageForPlayerMeth (string x)
+    public void MessageForPlayerOne(string x)
     {
         playerHealthGO.transform.GetChild(8).GetComponent<UILabel>().text = x;
+    }
+    public void MessageForPlayerDoors(string x, int y)
+    {
+        playerHealthGO.transform.GetChild(8).GetComponent<UILabel>().text = x + y;
     }
 }

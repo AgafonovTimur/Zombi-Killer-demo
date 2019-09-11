@@ -13,11 +13,13 @@ public class MessageForPlayer : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        player.GetComponent<PlayerStats>().MessageForPlayerMeth(messageForPlayerStr);
+        if (other.tag == "Player")
+            player.GetComponent<PlayerStats>().MessageForPlayerOne(messageForPlayerStr);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        player.GetComponent<PlayerStats>().MessageForPlayerMeth("");
+        if (other.tag == "Player")
+            player.GetComponent<PlayerStats>().MessageForPlayerOne("");
     }
 }

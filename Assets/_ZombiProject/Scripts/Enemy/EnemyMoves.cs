@@ -35,7 +35,7 @@ public class EnemyMoves : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) >= minDistance &&
             Vector3.Distance(transform.position, player.transform.position) < maxDistance)
         {
-
+            maxDistance = 100f;
             transform.LookAt(playerPos);
             transform.position += transform.forward * zombiMoveSpeed * Time.deltaTime;
         }
@@ -46,6 +46,13 @@ public class EnemyMoves : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) > maxDistance)
         {
 
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Bullet(Clone)")
+        {
+            maxDistance = 100f;
         }
     }
 }

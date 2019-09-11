@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 65166057218814966}
   - component: {fileID: 95572261639035438}
   - component: {fileID: 114741168290380588}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OpeningDoors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4615324127546984}
-  m_Layer: 0
+  - component: {fileID: 65534370588568192}
+  - component: {fileID: 114818172914420480}
+  m_Layer: 2
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,8 +129,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1945335324177246}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7.5}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -34.5, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4522043200262076}
@@ -245,6 +247,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7, y: 4, z: 2.44}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!65 &65534370588568192
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945335324177246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 4, z: 2.44}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!65 &65949843853586748
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -286,3 +300,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f4931f4bc25ef4ab2b1d7743a655e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114818172914420480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945335324177246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be516c814a2f5843af7c39a7800a78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GOwithTrigger: {fileID: 1532790123736540}
+  messageOne: 'zombies to kill :  '
+  messageTwo: 
+  messageEmpty: 
+  enemysLeft: []

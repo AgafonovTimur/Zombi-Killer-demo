@@ -27,6 +27,7 @@ public class EnemyTakeDamage : MonoBehaviour {
         hitPlayerTrigger.GetComponent<BoxCollider>().enabled = false;
         //GetComponent<BoxCollider>().enabled = false;
         GetComponent<EnemyMoves>().enabled = false;
+        gameObject.layer = 2;
         yield return new WaitForSeconds(3);
  //       Debug.Log("kill: wait to destroy zombi body 3 sec");
         Destroy(gameObject);
