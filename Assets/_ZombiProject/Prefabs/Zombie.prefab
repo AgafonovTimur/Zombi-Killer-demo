@@ -1177,7 +1177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300611964618398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72, y: 0.08000001, z: -2.7599998}
+  m_LocalPosition: {x: -1.68, y: 0, z: -6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4890266579777320}
@@ -1366,6 +1366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  hitPlayerTrigger: {fileID: 1117529023083584}
 --- !u!114 &114698052235055186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1377,8 +1378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b47aa8a9855a73459bfc99758e6e804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDistance: 15
   minDistance: 1.5
-  zombiMoveSpeed: 1.2
+  zombiMoveSpeed: 1.6
 --- !u!135 &135207822996407432
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -2309,7 +2311,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1300611964618398}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50

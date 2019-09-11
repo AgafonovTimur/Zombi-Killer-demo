@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMoves : MonoBehaviour {
+public class EnemyMoves : MonoBehaviour
+{
 
-    
+    [SerializeField]
     float maxDistance = 10.0f;
     [SerializeField]
     float minDistance = 2.5f;
@@ -17,27 +18,64 @@ public class EnemyMoves : MonoBehaviour {
     NavMeshAgent zombi;
 
 
-    void Start () {
+    void Start()
+    {
 
         player = GameObject.FindGameObjectWithTag("Player");
         zombi = GetComponent<NavMeshAgent>();
 
-	}
-
+    }
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) >= minDistance)
+        Vector3 playerPos = new Vector3(player.transform.position.x,
+                                        player.transform.position.y - 0.9f,
+                                        player.transform.position.z);
+
+        if (Vector3.Distance(transform.position, player.transform.position) >= minDistance &&
+            Vector3.Distance(transform.position, player.transform.position) < maxDistance)
         {
-            Vector3 playerPos = new Vector3(player.transform.position.x, player.transform.position.y - 0.9f, player.transform.position.z);
+
             transform.LookAt(playerPos);
             transform.position += transform.forward * zombiMoveSpeed * Time.deltaTime;
         }
         if (Vector3.Distance(transform.position, player.transform.position) < minDistance)
         {
+            transform.LookAt(playerPos);
+        }
+        if (Vector3.Distance(transform.position, player.transform.position) > maxDistance)
+        {
 
         }
     }
+}
+
+
+        //private void OnCollisionStay(Collision collision)
+        //{
+        //    Vector3 playerPos = new Vector3(player.transform.position.x,
+        //                                    player.transform.position.y - 0.9f,
+        //                                    player.transform.position.z);
+
+        //    if (Vector3.Distance(zombiGO.transform.position, player.transform.position) >= minDistance &&
+        //        Vector3.Distance(zombiGO.transform.position, player.transform.position) < maxDistance)
+        //    {
+
+        //        zombiGO.transform.LookAt(playerPos);
+        //        zombiGO.transform.position += transform.forward * zombiMoveSpeed * Time.deltaTime;
+        //    }
+        //    if (Vector3.Distance(zombiGO.transform.position, player.transform.position) < minDistance)
+        //    {
+        //        transform.LookAt(playerPos);
+        //    }
+        //    if (Vector3.Distance(zombiGO.transform.position, player.transform.position) > maxDistance)
+        //    {
+
+        //    }
+        //}
+
+
+        //}
         //if (player != null)
         //{
         //    zombi.destination = player.transform.position * zombiMoveSpeed;
@@ -71,5 +109,5 @@ public class EnemyMoves : MonoBehaviour {
 
         //}
 
+
     
-}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunFire : MonoBehaviour {
 
-    public float damage = 10f;
+    public int damage = 10;
     public float range = 100f;
     public float fireRate = 15f;
     [SerializeField]
@@ -131,5 +131,10 @@ public class GunFire : MonoBehaviour {
             }
             
         }
+    } 
+
+    public void PickUpWeaponUpgrade (int x)
+    {
+        damage = damage + x;
     }
 }

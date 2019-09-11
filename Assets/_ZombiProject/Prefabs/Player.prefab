@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 54092896450624044}
   - component: {fileID: 82999913789225102}
   - component: {fileID: 114405681170479258}
+  - component: {fileID: 114268435059320548}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -94,7 +95,6 @@ GameObject:
   - component: {fileID: 20760320873301836}
   - component: {fileID: 81360471325755592}
   - component: {fileID: 124431584359548946}
-  - component: {fileID: 114510964069650276}
   m_Layer: 2
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -214,14 +214,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504667541005398}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.523, y: 0.9549999, z: -1.6100001}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 0.3, y: 1.02, z: 12.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4901230164475934}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 11.931001, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 176.266, z: 0}
 --- !u!4 &4895883298817000
 Transform:
   m_ObjectHideFlags: 1
@@ -479,29 +479,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114405681170479258
+--- !u!114 &114268435059320548
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504667541005398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c074a57af064bee41aeb4d598596a101, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthF: 100
-  playerArmorF: 25
-  bulletAmmount: 30
-  clipsAmmount: 10
-  healthPack: 2
-  grenades: 5
---- !u!114 &114510964069650276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1572587180709990}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1511dad0ff66fb4ca5bdf017f713d38, type: 3}
@@ -521,6 +504,24 @@ MonoBehaviour:
     type: 2}
   bulletEmitter: {fileID: 4924889356659292}
   reloadGO: {fileID: 1146388231254184}
+--- !u!114 &114405681170479258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504667541005398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c074a57af064bee41aeb4d598596a101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPanel: {fileID: 0}
+  playerHealthF: 100
+  playerArmorF: 25
+  bulletAmmount: 30
+  clipsAmmount: 10
+  healthPack: 2
+  grenades: 5
 --- !u!114 &114796459340303820
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour {
     GameObject playerHealthGO;
     //[SerializeField]
     GameObject ammoGO;
+    [SerializeField]
+    GameObject deathPanel;
     public int playerHealthF = 100;
 //    string heroHealthS;
     public int playerArmorF = 25;
@@ -19,14 +21,13 @@ public class PlayerStats : MonoBehaviour {
     public int healthPack = 2;
   //  string healthPackS;
     public int grenades = 5;
-   // string grenadesS;
-
+    // string grenadesS;
 
 
     void Start () {
         playerHealthGO = GameObject.Find("playerHealthAndArmor");
         ammoGO = GameObject.Find("ammunation");
-        playerHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = "100"; //hp , 125 max
+        playerHealthGO.transform.GetChild(1).GetComponent<UILabel>().text ="100"; //hp , 125 max
         playerHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = "25"; // armor
         playerHealthGO.transform.GetChild(5).GetComponent<UILabel>().text = "5"; // health pack
         playerHealthGO.transform.GetChild(7).GetComponent<UILabel>().text = "2"; // boosts
@@ -58,7 +59,7 @@ public class PlayerStats : MonoBehaviour {
     public int PlayerHitted(int x, int y) // hitted by enemy
     {
         Debug.Log("x = " + x);
-        if (x > 0)
+        if (playerHealthF > 0)
         {
             playerHealthF = playerHealthF - x;
             //     Debug.Log("&" + heroHealthF);
@@ -66,11 +67,13 @@ public class PlayerStats : MonoBehaviour {
             playerHealthGO.transform.GetChild(1).GetComponent<UILabel>().text = playerHealthF.ToString();
             //heroArmorF = heroArmorF - y;
             //heroHealthGO.transform.GetChild(3).GetComponent<UILabel>().text = heroArmorF.ToString(); //armor
-     //       Debug.Log("heroDamageTaken " + x + " armor " + heroArmorF);
+            Debug.Log("heroDamageTaken " + x);
         }
-        if (x <= 0)
+        if (playerHealthF <= 0)
+        {
             PlayerDeath();
-        return x;
+        }
+            return x;
     }
     public void AmmoConsuption(int x, int y) // send bullets , clips
     {
@@ -97,9 +100,11 @@ public class PlayerStats : MonoBehaviour {
 
     private void PlayerDeath()
     {
-      //  Debug.Log("death");
-        Transform t = gameObject.GetComponent<Transform>();
-  //      t.gameObject.SetActive(false);
+        deathPanel.SetActive(true);
+        gameObject.SetActive(false);
+        Debug.Log("death");
+        //      Transform t = gameObject.GetComponent<Transform>();
+        //      t.gameObject.SetActive(false);
     }
     public void MessageForPlayerMeth (string x)
     {

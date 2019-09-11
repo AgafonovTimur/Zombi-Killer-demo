@@ -76,6 +76,7 @@
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\PickUpHealth.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\PickUpsSpawn.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\PlayerStats.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\Hero\WeaponUpgrade.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\HotKeys.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\HumanoidStats.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\LevelLoading.cs" />
