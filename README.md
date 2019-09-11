@@ -1,5 +1,5 @@
 # Zombi Killer
-3D shooter Demo level
+3D shooter Demo level Unity version 2018.2
 
 11 09
 - weapon upgrade
