@@ -10,7 +10,7 @@ public class EnemyTakeDamage : MonoBehaviour {
     public float health = 100;
     [SerializeField]
     GameObject hitPlayerTrigger;
-    
+
     public void TakeDamage(float ammount)
     {
         health -= ammount;
@@ -24,10 +24,12 @@ public class EnemyTakeDamage : MonoBehaviour {
 
     IEnumerator KillZombi () // zombie death
     {
-        hitPlayerTrigger.GetComponent<BoxCollider>().enabled = false;
-        //GetComponent<BoxCollider>().enabled = false;
+        Destroy(hitPlayerTrigger);
+        GetComponent<BoxCollider>().enabled = false;
+        Destroy(gameObject.GetComponent<Rigidbody>());
         GetComponent<EnemyMoves>().enabled = false;
-        gameObject.layer = 2;
+ //       GetComponent<NavMeshAgent>().enabled = false;
+ //       gameObject.layer = 2;
         yield return new WaitForSeconds(3);
  //       Debug.Log("kill: wait to destroy zombi body 3 sec");
         Destroy(gameObject);

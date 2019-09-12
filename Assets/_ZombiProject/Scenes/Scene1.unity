@@ -5863,7 +5863,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4885485653155956, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 11.39
+      value: 10.94
       objectReference: {fileID: 0}
     - target: {fileID: 4885485653155956, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5890,16 +5890,6 @@ Prefab:
       propertyPath: deathPanel
       value: 
       objectReference: {fileID: 1787328692}
-    - target: {fileID: 20760320873301836, guid: f3513c0985a9fc740a37ba9034177e47,
-        type: 2}
-      propertyPath: field of view
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 114796459340303820, guid: f3513c0985a9fc740a37ba9034177e47,
-        type: 2}
-      propertyPath: m_RunSpeed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3513c0985a9fc740a37ba9034177e47, type: 2}
   m_IsPrefabAsset: 0
@@ -25574,6 +25564,10 @@ Prefab:
       propertyPath: enemysLeft.Array.data[4]
       value: 
       objectReference: {fileID: 940865973}
+    - target: {fileID: 1945335324177246, guid: 1203788b21d1b8140844ce8e8c65589e, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1203788b21d1b8140844ce8e8c65589e, type: 2}
   m_IsPrefabAsset: 0
