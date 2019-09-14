@@ -70,7 +70,7 @@
     <Compile Include="Assets\_ZombiProject\Scripts\Enemy\EnemySpawn.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\Enemy\EnemyTakeDamage.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\FirstPersonController.cs" />
-    <Compile Include="Assets\_ZombiProject\Scripts\FPS.cs" />
+    <Compile Include="Assets\_ZombiProject\Scripts\FramesPerSecond.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\Bullet.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\GunFire.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\PickUpAmmo.cs" />

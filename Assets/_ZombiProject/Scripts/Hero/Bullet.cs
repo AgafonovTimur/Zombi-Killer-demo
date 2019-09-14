@@ -7,10 +7,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    float bulletLifeTime;
+    float bulletLifeTime = 1f;
     public float bulletSpeed = 20f;
     public Rigidbody rb;
     public Vector3 bulletTarget ;
+    Vector3 oneBulletShoot;
 
     private void Start()
     {
@@ -23,14 +24,15 @@ public class Bullet : MonoBehaviour
 
         if (bulletTarget != null)
         {
-
-            transform.position = Vector3.MoveTowards(transform.position, bulletTarget, step);
+            oneBulletShoot = Vector3.MoveTowards(transform.position, bulletTarget, step);
+            transform.position = oneBulletShoot;
         }
     }
     public void bulletPos(Vector3 target)
-        {
-            bulletTarget = target;
-        }
+    {
+        bulletTarget = target;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);

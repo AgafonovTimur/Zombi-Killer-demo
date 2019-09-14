@@ -8,9 +8,4 @@ public class LevelLoading : MonoBehaviour {
 	void Start () {
         SceneManager.LoadScene(1);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

@@ -23,9 +23,6 @@ public class EnemyMeleeHit : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player") // && other.gameObject != null)
         {
-            //          StartCoroutine("EnemyAttack");
-            //          other.GetComponent<PlayerStats>().PlayerHitted(damageToplayerOnHit, 0); // add - hp 
- //           anim.speed = 1;
             anim.SetTrigger("attack");
         }
     }
@@ -34,26 +31,22 @@ public class EnemyMeleeHit : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) // damage player every x second during stay close
     {
-        if (other.gameObject.tag == "Player" /*&& other.gameObject != null */&& !isStarted)
+        if (other.gameObject.tag == "Player" && !isStarted)
         {
-            //anim.ResetTrigger("attack");
-  //          other.GetComponent<PlayerStats>().PlayerHitted(damageToplayerOnHit, 0);
             GameObject x = other.gameObject as GameObject;
             while (other.gameObject != null && !isStarted)
             { 
                 StartCoroutine(EnemyAttack(x));
                 isStarted = true;
-                Debug.Log("stay in zombi range");
             }
         }
     }
 
-    IEnumerator EnemyAttack(GameObject x) // wait before next attack
+    IEnumerator EnemyAttack(GameObject x) // wait before next attack 1 sec
     {
         x.GetComponent<PlayerStats>().PlayerHitted(damageToplayerOnHit, 0);
         yield return new WaitForSeconds(1);
         isStarted = false;
-//        Debug.Log("enumerator" + x.name);
     }
 
     private void OnTriggerExit(Collider other)
@@ -62,19 +55,15 @@ public class EnemyMeleeHit : MonoBehaviour {
         {
             //       anim.speed = 6;
             anim.SetTrigger("walk");
-            //if (other.gameObject.tag == "Player" && other.gameObject != null)
-            //{
             StopCoroutine("enemyAttack");
-            //           Debug.Log("enumerator stopped");
+
         }
-        //}
     }
 
     public void EnemyDeathAnim()
     {
  //       anim.speed = 1;
         anim.SetTrigger("fallingback");
- //       Debug.Log("fallingback anim");
     }
 
 }

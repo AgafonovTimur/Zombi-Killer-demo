@@ -11,6 +11,12 @@ public class EnemyTakeDamage : MonoBehaviour {
     [SerializeField]
     GameObject hitPlayerTrigger;
 
+
+    private void Start()
+    {
+        
+    }
+
     public void TakeDamage(float ammount)
     {
         health -= ammount;
@@ -18,20 +24,21 @@ public class EnemyTakeDamage : MonoBehaviour {
         {
             gameObject.GetComponent<EnemyMeleeHit>().EnemyDeathAnim();
             StartCoroutine(KillZombi());
- //           Debug.Log("zombi killed");
         }
     }
 
     IEnumerator KillZombi () // zombie death
     {
         Destroy(hitPlayerTrigger);
-        GetComponent<BoxCollider>().enabled = false;
-        Destroy(gameObject.GetComponent<Rigidbody>());
+
+        BoxCollider enemyBoxCol = GetComponent<BoxCollider>();
+        enemyBoxCol.enabled = false;
+
+        Rigidbody zombieRB = gameObject.GetComponent<Rigidbody>();
+        Destroy(zombieRB);
+
         GetComponent<EnemyMoves>().enabled = false;
- //       GetComponent<NavMeshAgent>().enabled = false;
- //       gameObject.layer = 2;
         yield return new WaitForSeconds(3);
- //       Debug.Log("kill: wait to destroy zombi body 3 sec");
         Destroy(gameObject);
         
     }

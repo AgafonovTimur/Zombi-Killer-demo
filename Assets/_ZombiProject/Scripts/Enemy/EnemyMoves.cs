@@ -16,6 +16,7 @@ public class EnemyMoves : MonoBehaviour
     //[SerializeField]
     GameObject player;
     NavMeshAgent zombi;
+    float distance;
 
 
     void Start()
@@ -23,30 +24,30 @@ public class EnemyMoves : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         zombi = GetComponent<NavMeshAgent>();
-
+        
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 playerPos = new Vector3(player.transform.position.x,
+        distance = Vector3.Distance(transform.position, player.transform.position);  
+        Vector3 playerPos = new Vector3(player.transform.position.x,                //zombie look higher at hero
                                         player.transform.position.y - 0.9f,
                                         player.transform.position.z);
 
-        if (Vector3.Distance(transform.position, player.transform.position) >= minDistance &&
-            Vector3.Distance(transform.position, player.transform.position) < maxDistance)
-        {
+        //if (Vector3.Distance(transform.position, player.transform.position) >= minDistance &&
+        //    Vector3.Distance(transform.position, player.transform.position) < maxDistance)
+        if (distance >= minDistance && distance < maxDistance)
+            {
             maxDistance = 100f;
             transform.LookAt(playerPos);
-            transform.position += transform.forward * zombiMoveSpeed * Time.deltaTime;
+            transform.position += transform.forward * zombiMoveSpeed * Time.fixedDeltaTime;
         }
-        if (Vector3.Distance(transform.position, player.transform.position) < minDistance)
+        if (distance < minDistance)
         {
             transform.LookAt(playerPos);
         }
-        if (Vector3.Distance(transform.position, player.transform.position) > maxDistance)
-        {
+        if (distance > maxDistance) { }
 
-        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -56,65 +57,4 @@ public class EnemyMoves : MonoBehaviour
         }
     }
 }
-
-
-        //private void OnCollisionStay(Collision collision)
-        //{
-        //    Vector3 playerPos = new Vector3(player.transform.position.x,
-        //                                    player.transform.position.y - 0.9f,
-        //                                    player.transform.position.z);
-
-        //    if (Vector3.Distance(zombiGO.transform.position, player.transform.position) >= minDistance &&
-        //        Vector3.Distance(zombiGO.transform.position, player.transform.position) < maxDistance)
-        //    {
-
-        //        zombiGO.transform.LookAt(playerPos);
-        //        zombiGO.transform.position += transform.forward * zombiMoveSpeed * Time.deltaTime;
-        //    }
-        //    if (Vector3.Distance(zombiGO.transform.position, player.transform.position) < minDistance)
-        //    {
-        //        transform.LookAt(playerPos);
-        //    }
-        //    if (Vector3.Distance(zombiGO.transform.position, player.transform.position) > maxDistance)
-        //    {
-
-        //    }
-        //}
-
-
-        //}
-        //if (player != null)
-        //{
-        //    zombi.destination = player.transform.position * zombiMoveSpeed;
-        //}
-        //if (player = null)
-        //{
-        //    Debug.Log("player lull");
-        //}
-        //       Debug.Log(zombi.destination + "" + player.transform.position);
-        //if (Vector3.Distance(transform.position, player.position) >= minDistance)
-        //{
-        //    Vector3 playerPos = new Vector3(player.transform.position.x, player.transform.position.y - 1f, player.transform.position.z);
-        //    transform.LookAt(playerPos);
-        //    zombi.destination = player.transform.position * zombiMoveSpeed;
-        //}
-
-        //if (Vector3.Distance(transform.position, player.position) <= maxDistance)
-        //{
-
-        //}
-
-        //transform.LookAt(hero.transform);
-
-        //if (Vector3.Distance(transform.position, hero.position) >= minDistance)
-        //{
-        //    transform.position += transform.forward * enemyMoveSpeed * Time.deltaTime;
-        //}
-
-        //if (Vector3.Distance(transform.position, hero.position) <= maxDistance)
-        //{
-
-        //}
-
-
     

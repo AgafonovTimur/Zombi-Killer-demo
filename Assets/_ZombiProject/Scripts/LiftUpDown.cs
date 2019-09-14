@@ -43,6 +43,5 @@ public class LiftUpDown : MonoBehaviour
     {
         anim.SetTrigger(direction);
         anim.speed = animSpeed;
-        Debug.Log(animSpeed);
     }
 }
