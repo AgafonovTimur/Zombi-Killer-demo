@@ -1,6 +1,14 @@
 # Zombi Killer
 3D shooter Demo level Unity version 2018.2
 
+15 09
+- code changes
+- bug fixes
+
+14 09
+- code changes
+- bug fixes
+
 11 09
 - cant leave room if any zombi is alive
 - weapon upgrade
