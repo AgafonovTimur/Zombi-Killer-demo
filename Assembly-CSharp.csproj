@@ -79,7 +79,6 @@
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\PlayerStats.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\Hero\WeaponUpgrade.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\HotKeys.cs" />
-    <Compile Include="Assets\_ZombiProject\Scripts\HumanoidStats.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\LevelLoading.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\LiftActivation.cs" />
     <Compile Include="Assets\_ZombiProject\Scripts\LiftUpDown.cs" />

@@ -36,7 +36,6 @@ public class CanOpenTheDoor : MonoBehaviour {
                 if (enemysLeft[i] == null)
                 {
                     enemysLeft.RemoveAt(i);  
-                    Debug.Log("before door open " + enemysLeft.Count);
                 }
             }
         }

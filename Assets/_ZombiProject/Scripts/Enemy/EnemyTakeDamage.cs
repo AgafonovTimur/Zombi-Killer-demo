@@ -30,13 +30,8 @@ public class EnemyTakeDamage : MonoBehaviour {
     IEnumerator KillZombi () // zombie death
     {
         Destroy(hitPlayerTrigger);
-
-        BoxCollider enemyBoxCol = GetComponent<BoxCollider>();
-        enemyBoxCol.enabled = false;
-
-        Rigidbody zombieRB = gameObject.GetComponent<Rigidbody>();
-        Destroy(zombieRB);
-
+        GetComponent<BoxCollider>().enabled = false;
+        Destroy(gameObject.GetComponent<Rigidbody>());
         GetComponent<EnemyMoves>().enabled = false;
         yield return new WaitForSeconds(3);
         Destroy(gameObject);

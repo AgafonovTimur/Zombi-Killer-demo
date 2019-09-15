@@ -170,7 +170,6 @@ ff802c7b282033bb4b267dbc1773df48 Assembly-CSharp.dll:.TweenAlpha
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 fec2a829e19ea2cccd4ca3d8e59220a9 Assembly-CSharp.dll:.UILabel
 5f75f87fe1c816fa9960a2408fa91633 Assembly-CSharp.dll:.UIButton
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.HumanoidStats
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.PlayIdleAnimations
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Car.CarUserControl
 76d2c79cc734a7dbd1e677cd43330924 Assembly-CSharp.dll:.DestroyObj
@@ -253,7 +252,7 @@ d779870eb644317fc07a0875d13a59a4 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 e8c55080f40ec33b8394fd5dff4f9b4b Assembly-CSharp.dll:.UIShowControlScheme
 b109bba716c2380e2bf01f9ca97985ab Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Car.CarAIControl
 bd1e9ef58438f577497c159b14f8c5b6 Assembly-CSharp.dll:.CFX_LightIntensityFade
-a8b8ce5a94cc61cc06a01a0f8123ec78 Assembly-CSharp.dll:.PickUpAmmo
+2b14ba6c64cfd734eba7c711abc239e5 Assembly-CSharp.dll:.PickUpAmmo
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.UIWidgetContainer
 cf7d1c378b2dd5f84b77e4055ebacc06 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Car.CarSelfRighting
@@ -303,7 +302,7 @@ e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 fd5bec7c3a0fba860bb3b16a37b8f7c4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController
 a90d6901a99744ae38d30050782e4e34 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.HandHeldCam
 ab81ce3bab66b27457f2d7b929fb80fc Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Aeroplane.AeroplanePropellerAnimator
-10dcc5ae5de6c12cc15ee8a1f9136b71 Assembly-CSharp.dll:.PlayerStats
+541b54a744a8b48daab7ba106275eabd Assembly-CSharp.dll:.PlayerStats
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.Tutorial5
 5fb29f115f3f435559db1a1cc9f9f642 Assembly-CSharp.dll:.EnemyMoves
 ff802c7b282033bb4b267dbc1773df48 Assembly-CSharp.dll:.TweenFill

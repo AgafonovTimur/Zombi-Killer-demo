@@ -16,22 +16,12 @@ public class PickUpHealth : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            int x = other.GetComponent<PlayerStats>().playerHealthF;
-            if (x < 125) // health pack picked
-            {
-                x = x + 50;
+            int x = other.GetComponent<PlayerStats>().playerHealth;
 
-                if (x > 125)
-                {
-                    x = 125;
-                    other.GetComponent<PlayerStats>().PlayerHealed(x, 0); // health pack picked
-                    Destroy(gameObject);
-                }
-                if (x <= 125)
-                {
-                    other.GetComponent<PlayerStats>().PlayerHealed(x, 0); // health pack picked
-                    Destroy(gameObject);
-                }
+            if (x < 125)
+            {
+                other.GetComponent<PlayerStats>().PlayerHealthChanges(50, 0);
+                Destroy(gameObject);
             }
         }    
     }

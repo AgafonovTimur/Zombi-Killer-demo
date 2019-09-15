@@ -8,7 +8,7 @@ public class EnemyMeleeHit : MonoBehaviour {
     [SerializeField]
     private  GameObject player;
     [SerializeField]
-    int damageToplayerOnHit = 10;
+    int damageToplayerOnHit = -10;
     Animator anim;
     bool isStarted;
 
@@ -44,7 +44,7 @@ public class EnemyMeleeHit : MonoBehaviour {
 
     IEnumerator EnemyAttack(GameObject x) // wait before next attack 1 sec
     {
-        x.GetComponent<PlayerStats>().PlayerHitted(damageToplayerOnHit, 0);
+        x.GetComponent<PlayerStats>().PlayerHealthChanges(damageToplayerOnHit, 0);
         yield return new WaitForSeconds(1);
         isStarted = false;
     }

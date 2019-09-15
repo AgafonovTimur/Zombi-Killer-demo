@@ -36,32 +36,33 @@ public class GunFire : MonoBehaviour {
                 StartCoroutine("ReloadWeapon");
             }
         }
-        if (clips >= 0)
+//------------------------------------------------------------------------------------------------------------------------------------
+// weaon reload
+//-----------------------------------------------------------------------------------------------------------------------------
+
+        if (clips >= 0 && bullets > 0 && !isReloading) // has ammo to shoot
         {
-            if (bullets > 0 && !isReloading) 
+            if (Input.GetButton("Fire1") && Time.fixedTime >= nextTimeToFire)
             {
-                if (Input.GetButton("Fire1") && Time.fixedTime >= nextTimeToFire)
+                if (bullets != curBullets)
                 {
-                    if (bullets != curBullets)
-                    {
-                        curBullets = bullets;
-                    }
-                    if(clips != curClips)
-                    {
-                        clips = curClips;
-                    }
-                    nextTimeToFire = Time.fixedTime + 1f / fireRate;
-                    bullets = bullets - 1;
-                    gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(bullets,clips); // while shooting
-                    ShootABullet();
+                    curBullets = bullets;
                 }
+                if(clips != curClips)
+                {
+                    clips = curClips;
+                }
+                nextTimeToFire = Time.fixedTime + 1f / fireRate;
+                bullets = bullets - 1;
+                gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(bullets,clips); // while shooting
+                ShootABullet();
             }
-            else if (bullets <= 0 && clips > 0 )
+        }
+        else if (bullets <= 0 && clips > 0 ) // can reload
+        {
+            if (!isReloading)
             {
-                if (!isReloading)
-                {
-                    StartCoroutine("ReloadWeapon");
-                }
+                StartCoroutine("ReloadWeapon");
             }
         }
         if (clips <= 0 && bullets <= 0)
@@ -88,7 +89,7 @@ public class GunFire : MonoBehaviour {
         if (clips > 0 || bullets > 0)
         {
             bullets = 30;
-            clips = clips - 1;
+            clips = gameObject.GetComponentInParent<PlayerStats>().clipsAmmount - 1;
             gameObject.GetComponentInParent<PlayerStats>().AmmoConsuption(bullets, clips);
         }
 
@@ -98,6 +99,9 @@ public class GunFire : MonoBehaviour {
         }
     }
 
+//---------------------------------------------------------------------------------------------------------------------------
+// one bullet shoot
+//------------------------------------------------------------------------------------------------------------------------------
 
     public void ShootABullet()
     {
@@ -122,6 +126,7 @@ public class GunFire : MonoBehaviour {
             
         }
     } 
+//----------------------------------------------------------------------------------------------------------------------------
 
     public void PickUpWeaponUpgrade (int x)
     {

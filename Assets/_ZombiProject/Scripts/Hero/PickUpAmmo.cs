@@ -6,6 +6,8 @@ public class PickUpAmmo : MonoBehaviour {
 
     [SerializeField]
     float RotationSpeed = 2f;
+    [SerializeField]
+    int clipsToAdd = 7;
 
 	void Update ()
     {
@@ -16,12 +18,12 @@ public class PickUpAmmo : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            int x = other.GetComponentInChildren<GunFire>().bullets;
+            int x = other.GetComponent<GunFire>().bullets; 
             int y = other.GetComponent<PlayerStats>().clipsAmmount;
 
-            if (y < 10) // health pack picked
+            if (y < 10) // ammo pack picked
             {
-                y = y + 7;
+                y = y + clipsToAdd;
 
                 if (y > 10)
                 {
