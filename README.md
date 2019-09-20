@@ -38,4 +38,4 @@
 #
 
 - F5 - restart
-- escape - exit
+- ctrl+q - exit
