@@ -21,9 +21,14 @@ public class HotKeys : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-
+        if (Input.GetKey(KeyCode.LeftControl))
+		{
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("quit");
+                Application.Quit();
+            }
+		}
         if (Input.GetKeyDown(KeyCode.F5))
             SceneManager.LoadScene(1);
 

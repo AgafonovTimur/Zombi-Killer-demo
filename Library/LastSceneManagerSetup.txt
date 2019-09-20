@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_ZombiProject/Scenes/Scene1.unity
+- path: Assets/_ZombiProject/Scenes/DontDestroyOnLoad.unity
   isLoaded: 1
   isActive: 1

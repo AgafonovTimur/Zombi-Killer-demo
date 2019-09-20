@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class LevelLoading : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+
+	//void Start () {
+ //       SceneManager.LoadScene(1);
+	//}
+    
+    void OnClick ()
+    {
         SceneManager.LoadScene(1);
-	}
+    }
 }

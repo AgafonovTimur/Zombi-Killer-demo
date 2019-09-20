@@ -8612,7 +8612,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16cf9fb5cd6be224db4ab3d507145110, type: 2}
-  mText: ESC - quit
+  mText: ctrl+q - quit
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
